@@ -4,4 +4,4 @@ factors 1 = []
 factors n = k : (factors $ div n k)
     where k = head [x | x <- [2..], mod n x == 0]
 
-isPrime = (==1) . length . take 2 . factors
+isPrime n = n == (head $ factors n)
